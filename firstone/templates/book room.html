@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book room</title>
+</head>
+<body>
+    {% block content %}
+    
+    <form action="booking" method="POST">
+      {% csrf_token %}
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">firstname</label>
+            <input type="text" class="form-control" value="{{ user.first_name }}" name="firstname">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">lastname</label>
+            <input type="text" class="form-control"  value="{{ user.last_name }}" name="lastname">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control"  name="address">
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">phone no</label>
+          <input type="text" class="form-control"  name="phone">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputCity">Booking from</label>
+            <input type="date" class="form-control" name="book_from">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputCity">Book Till</label>
+              <input type="date" class="form-control" name="book_till">
+            </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">persons</label>
+            <select id="inputState" class="form-control" name="persons">
+              <option selected>choose</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+            </select>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputZip">Bed type</label>
+            <select id="bed_type" class="form-control" name="bed_type">
+              <option selected>choose</option>
+              <option>single</option>
+              <option>twin</option>
+              <option>double</option>
+              <option>full</option>
+              <option>queen</option>
+              <option>king</option>
+            </select>
+          </div>
+        <button type="submit" class="btn btn-primary">book room</button>
+      </form>
+    {% endblock %}
+</body>
+</html>

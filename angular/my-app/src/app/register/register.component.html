@@ -1,0 +1,58 @@
+<h1 class="text-center">Register</h1>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+   <strong>Success!</strong> User successfully Registered.
+   <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+ <div *ngIf="alert1" class="alert alert-warning alert-dismissible fade show" role="alert">
+   <strong>failed!</strong> please enter valid credentials.
+   <button (click)="closeAlert1()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+   <div class="container">
+      <div class="form-group">
+        <div class="row jumbotron" >
+   
+        <div class="col-sm-6" [class.has.error]="firstName.invalid && firstName.touched">
+           <label for="inputname" class="control-label">Firstname</label>
+           <input type="text" required class="form-control" [(ngModel)]="first_name" #firstName="ngModel">
+           <span class="help-block" *ngIf="firstName.invalid && firstName.touched">
+              firstname is required
+           </span>
+        </div>
+        <div class="col-sm-6" [class.has.error]="lastName.invalid && lastName.touched">
+            <label for="inputname" class="control-label">Lastname</label>
+            <input type="text"required class="form-control"[(ngModel)]="last_name" #lastName="ngModel">
+            <span class="help-block" *ngIf="lastName.invalid && lastName.touched">
+               lastname is required
+            </span>
+         </div>
+         <div class="col-sm-6" [class.has.error]="userName.invalid && userName.touched">
+            <label for="inputname" class="control-label">Username</label>
+            <input type="text" required  class="form-control" [(ngModel)]="username" #userName="ngModel">
+            <span class="help-block" *ngIf="userName.invalid && userName.touched">
+               username is required
+            </span>
+         </div>
+         <div class="col-sm-6" >
+            <label for="inputname" class="control-label">Email</label>
+            <input type="text" required class="form-control" [(ngModel)]="email" >
+         </div>
+         <div class="col-sm-6" >
+            <label for="password" class="control-label">Password</label>
+            <input type="text" required  class="form-control" [(ngModel)]="password" >
+            
+         </div>
+         <div class="col-sm-6">
+            <label for="password" class="control-label">Confirm Password</label>
+            <input type="text" required  class="form-control" [(ngModel)]="password">
+         </div>
+         <div class="col-sm-12" style="text-align:center; margin-top:20px;">  
+            <button type="button" class="btn btn-primary" (click)=register()>Register</button>
+            <p>Already have an account? <a href="login">Sign in</a>.</p>
+          </div> 
+        </div> 
+      </div>
+   </div>

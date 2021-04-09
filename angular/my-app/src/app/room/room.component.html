@@ -1,0 +1,15 @@
+<section class="room">
+    <div class="container">
+        <h1 class="text-center">Rooms</h1>
+        <div class="row" *ngFor="let ro of roo" >
+            <div class="col-lg-8" >
+              <div class="box">
+                  <div  style="margin-top:30px;"></div>
+                  <img src="{{ro.image}}" width="160%">
+                  <div class="col-sm-6" style="margin-top:10px;"></div>
+                  <h2 >{{ro.name}}</h2>
+              </div>
+             </div>
+        </div>
+    </div>
+</section>

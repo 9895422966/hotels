@@ -1,0 +1,22 @@
+<h1 class="text-center">Login</h1>
+<div class="container">
+   <form #loginForm="ngForm" >
+      <div class="col jumbotron" >
+        <div class="col">
+           <label for="inputname">Firstname</label>
+           <input type="text" class="form-control" name="Username" [(ngModel)]="username">
+        </div>
+        <div class="col">
+            <label for="Password">Password</label>
+            <input type="Password" class="form-control"  name="Password" [(ngModel)]="password">
+         </div>
+         <div class="col-sm-12" style="text-align:center; margin-top:20px;">  
+            <input type="button"  value="Login" class="btn btn-primary" (click)=authlogin()>
+            <p>Don't have an account? <a href="register">Sign up</a>.</p>
+           <div *ngIf="isloginError" class="error-message">
+              <i class="material-icons">login error</i>
+           </div> 
+          </div> 
+      </div>
+    </form>
+  </div>

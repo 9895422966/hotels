@@ -1,0 +1,31 @@
+header
+  {
+	 position: absolute;
+	 z-index: 10;
+	 width: 100%;
+  }
+.navbar
+  {
+     padding: 20% 0;
+  }
+.navbar-brand
+  {
+     font-weight: 800;
+	 text-transform: uppercase;
+	 font-size: 20em;
+	 color: 262626;
+  }  
+.nav-item
+  {
+	  font-weight: 800;
+	  text-transform: uppercase;
+  }
+.banner
+  {
+	  position: relative;
+	  background-color: rgb(15, 24, 24);
+	  min-height: 100vh;
+	  background-size: cover;
+	  background-position: center;
+	  padding: 250px 0 200px;
+  }
